@@ -1,19 +1,19 @@
-import React from 'react';
-import NextLink from 'next/link';
-import Navigation from './navigation';
+import React from "react";
+import NextLink from "next/link";
+import Navigation from "./navigation";
 
 const Header = ({ menu, altLangs }) => {
-
   return (
     <header
-    style={{
-      backgroundColor: menu.data.background,
-    }}>
+      style={{
+        backgroundColor: menu.data.background,
+      }}
+    >
       <div className="flex container mx-auto">
         <div className="flex items-center py-6 w-2/5">
-          <NextLink href={'/'} passHref>
+          <NextLink href={"/"} passHref>
             <a>
-              <img className="logo" src="/images/logo.png" alt="Site logo" />
+              <h1 className="text-3xl">KIDDO</h1>
             </a>
           </NextLink>
         </div>
