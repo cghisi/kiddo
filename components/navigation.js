@@ -1,38 +1,24 @@
-import React from "react";
-import { default as NextLink } from "next/link";
+import { default as NextLink } from 'next/link';
+import { hrefResolver } from '../prismic-configuration';
 
-export default function Navigation({ menu }) {
-  console.log(menu);
-  return (
-    <header className="site-header">
-      <NextLink href="/">
-        <a>
-          <div className="logo">Example Site</div>
-        </a>
-      </NextLink>
-      <MenuLinks menu={menu} />
-    </header>
-  );
-}
-
-const MenuLinks = ({ menu }) => {
-  console.log(menu);
-  if (menu) {
-    return (
-      <nav>
-        <ul>
-          {menu.body.map((menuLink, index) => (
-            <p>test</p>
-          ))}
-        </ul>
-      </nav>
-    );
+const MenuLinks = ({ links = [] }) => {
+  if (links) {
+    return links.map((menuLink, index) => {
+      return (
+        <li className="mr-6 inline-block" key={index}>
+          <NextLink
+            href={hrefResolver(menuLink.link)}
+            passHref
+          >
+            <a className="text-black hover:text-blue-800">{menuLink.label}</a>
+          </NextLink>
+        </li>
+      );
+    });
   }
-  return null;
 };
 
-const MenuLink = ({ menuLink }) => (
-  <li>
-    <DocLink link={menuLink.link}>{RichText.asText(menuLink.label)}</DocLink>
-  </li>
-);
+const Navigation = ({ menu }) =>
+  menu ? <MenuLinks links={menu.data.menu_links} /> : null;
+
+export default Navigation;

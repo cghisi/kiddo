@@ -1,42 +1,62 @@
 import React from "react";
-import Prismic from "@prismicio/client";
-import { client } from "../prismic-configuration";
+import { Client } from '../utils/prismicHelpers';
 
-import Navigation from "../components/navigation";
-import Slice from "../components/slice";
+import Layout from "components/Layout";
+import Slice from "components/slice";
 
-export default function Index({ navigation, data }) {
-  console.log(navigation);
 
-  return (
-    <div>
-      <Navigation menu={navigation} />
-      <Slice data={data} />
-    </div>
-  );
-}
+/**
+ * Homepage component
+ */
+const Homepage = ({ doc, menu, lang, preview }) => {
 
-export async function getStaticProps() {
-  const res = await client.query(
-    Prismic.Predicates.at("document.type", "landing_page")
-  );
+  if (doc && doc.data) {
 
-  const data = res.results.map((p) => {
-    return p.data;
-  });
 
-  const nav = await client.query(
-    Prismic.Predicates.at("document.type", "navigation")
-  );
+    console.log(doc.data.body)
+    //useUpdatePreviewRef(preview, doc.id)
+    //useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])
+    
+    return (
+      <Layout
+        altLangs={doc.alternate_languages}
+        lang={lang}
+        menu={menu}
+        //isPreview={preview.isActive}
+      >
+        <Slice sliceZone={doc.data.body} />
+      </Layout>
+    );
+  } 
+};
 
-  const navigation = nav.results.map((p) => {
-    return p.data;
-  });
+export async function getStaticProps({
+  preview, 
+  previewData,
+  locale,
+  locales,
+}) {
+
+  const ref = previewData ? previewData.ref : null
+  const isPreview = preview || false
+  const client = Client();
+
+  const doc =
+    (await client.getSingle('landing_page', ref ? { ref, lang: 'en-ca' } : { lang: 'en-ca' })) ||
+    {};
+
+  const menu =
+    (await client.getSingle('navigation', ref ? { ref, lang: 'en-ca'  } : { lang: 'en-ca' })) ||
+    {};
+
+  //const { currentLang, isMyMainLanguage} = manageLocal(locales, locale)
 
   return {
     props: {
-      navigation,
-      data,
+      menu,
+      doc
     },
   };
 }
+
+export default Homepage;

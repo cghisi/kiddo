@@ -1,19 +1,26 @@
-import HeroBanner from "./heroBanner";
-import BannerCaption from "./bannerCaption";
+import HeroBanner from "./slices/ComponentHeroBanner";
+import BannerCaption from "./slices/ComponentBannerCaption";
+import Text from "./slices/ComponentText";
+import IconInlineList from "./slices/ComponentInlineIcon";
 
-export default function Slice({ data }) {
-  var infos = data[0].body;
+export default function Slice({ sliceZone }) {
 
   return (
     <div>
-      {infos.map((item, index) => (
-        <div key={index}>
-          {item.slice_type === "hero" && <HeroBanner slice={item} />}
-          {item.slice_type === "banner_caption" && (
-            <BannerCaption slice={item} />
-          )}
-        </div>
-      ))}
+      {sliceZone.map((slice, index) => {
+         switch (slice.slice_type) {
+          case 'hero':
+            return <HeroBanner slice={slice} key={`slice-${index}`} />;
+          case 'banner_with_caption':
+            return <BannerCaption slice={slice} key={`slice-${index}`} />;
+          case 'text':
+            return <Text slice={slice} key={`slice-${index}`} />;
+          case 'icon_inline_list':
+              return <IconInlineList slice={slice} key={`slice-${index}`} />;
+          default:
+            return null;
+          }
+      })}
     </div>
   );
 }
