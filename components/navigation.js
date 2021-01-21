@@ -1,17 +1,15 @@
-import { default as NextLink } from 'next/link';
-import { hrefResolver } from '../prismic-configuration';
+import { default as Link } from "next/link";
+import { hrefResolver } from "../prismic-configuration";
 
 const MenuLinks = ({ links = [] }) => {
   if (links) {
     return links.map((menuLink, index) => {
+      console.log(menuLink.link);
       return (
         <li className="mr-6 inline-block" key={index}>
-          <NextLink
-            href={hrefResolver(menuLink.link)}
-            passHref
-          >
+          <Link href={hrefResolver(menuLink.link)} passHref>
             <a className="text-black link-navigation">{menuLink.label}</a>
-          </NextLink>
+          </Link>
         </li>
       );
     });
