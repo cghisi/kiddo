@@ -10,7 +10,7 @@ const MenuLinks = ({ links = [] }) => {
             href={hrefResolver(menuLink.link)}
             passHref
           >
-            <a className="text-black hover:text-blue-800">{menuLink.label}</a>
+            <a className="text-black link-navigation">{menuLink.label}</a>
           </NextLink>
         </li>
       );

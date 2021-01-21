@@ -20,6 +20,10 @@
   font-display: optional;
 }
 
+html {
+  font-size: 15px;
+}
+
 html,
 body {
   padding: 0;
@@ -41,4 +45,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.link-navigation:hover {
+  color: #6C63FF;
+}
+
+.link-navigation::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #6C63FF;
+  transition: width .3s;
+}
+
+.link-navigation:hover::after {
+  width: 50%;
+  margin: auto;
 }

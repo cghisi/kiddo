@@ -16,6 +16,12 @@ export default function ComponentInlineIcon({ slice }) {
               width={70}
               height={90}
             />
+            <div>
+              <h3 className="font-normal">
+                {RichText.asText(item.icon_title)}
+              </h3>
+              <RichText render={item.icon_description} />
+            </div>
           </div>
         ))}
       </div>

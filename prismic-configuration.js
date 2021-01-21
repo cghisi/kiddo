@@ -16,7 +16,7 @@ module.exports = {
     if (doc.type === "page") {
       return `/${doc.lang}/${doc.uid}`;
     }
-    if (doc.type === "homepage") {
+    if (doc.type === "landing_page") {
       return `/${doc.lang}`;
     }
     return "/";
@@ -27,7 +27,7 @@ module.exports = {
     if (doc.type === "page") {
       return `/${doc.lang}/${doc.uid}`;
     }
-    if (doc.type === "homepage") {
+    if (doc.type === "landing_page") {
       return `/${doc.lang}`;
     }
     return "/";

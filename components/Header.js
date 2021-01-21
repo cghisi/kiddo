@@ -1,6 +1,8 @@
 import React from "react";
 import NextLink from "next/link";
+
 import Navigation from "./navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = ({ menu, altLangs }) => {
   return (
@@ -20,7 +22,7 @@ const Header = ({ menu, altLangs }) => {
         <div className="flex justify-end items-center py-6 w-3/5">
           <ul className="">
             <Navigation menu={menu} />
-            {/* <LanguageSwitcher altLangs={altLangs} /> */}
+            <LanguageSwitcher altLangs={altLangs} />
           </ul>
         </div>
       </div>

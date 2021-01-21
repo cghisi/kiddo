@@ -16,12 +16,15 @@ export default function ComponentHeroBanner({ slice }) {
               <h1 className="text-5xl font-medium py-6 mr-5">
                 {RichText.asText(item.title)}
               </h1>
-              <div className="my-8">
-                <RichText render={item.subtitle} />
-              </div>
+              <p className="my-8 font-normal">
+                {RichText.asText(item.subtitle)}
+              </p>
               <a
                 href={item.cta_link}
-                class="bg-blue-500 hover:bg-blue-700 text-white py-3 px-6 rounded"
+                className="hover:bg-blue-500 text-white py-3 px-6 rounded-md"
+                style={{
+                  backgroundColor: item.cta_color
+                }}
               >
                 {item.cta_title}
               </a>

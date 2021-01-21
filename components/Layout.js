@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { prismicRepoName } from '../utils/prismicHelpers';
+
 import Header from './Header';
 import Footer from './Footer';
 //import ExitPreviewButton from './ExitPreviewButton'
@@ -28,7 +29,8 @@ const Layout = ({
         as="font"
         crossOrigin=""
       />
-      <title>Multi-language site</title>
+      <title>KIDDO - Need some help on your translations, website, content</title>
+      <meta name="description" content="Your consulting team that will help you with your website, translations..." />
       <script
         async
         defer
@@ -36,7 +38,7 @@ const Layout = ({
       />
     </Head>
     <Header
-      //altLangs={altLangs}
+      altLangs={altLangs}
       //currentLang={lang.currentLang}
       menu={menu}
     />

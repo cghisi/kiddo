@@ -1,5 +1,5 @@
 import React from "react";
-import { Client } from "../utils/prismicHelpers";
+import { Client, manageLocal } from "../utils/prismicHelpers";
 
 import Layout from "components/Layout";
 import Slice from "components/slice";
@@ -9,7 +9,7 @@ import Slice from "components/slice";
  */
 const Homepage = ({ doc, menu, lang, preview }) => {
   if (doc && doc.data) {
-    console.log(menu);
+    console.log(doc);
     //useUpdatePreviewRef(preview, doc.id)
     //useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])
 
@@ -39,21 +39,25 @@ export async function getStaticProps({
   const doc =
     (await client.getSingle(
       "landing_page",
-      ref ? { ref, lang: "en-ca" } : { lang: "en-ca" }
+      ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
   const menu =
     (await client.getSingle(
       "navigation",
-      ref ? { ref, lang: "en-ca" } : { lang: "en-ca" }
+      ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
-  //const { currentLang, isMyMainLanguage} = manageLocal(locales, locale)
+  const { currentLang, isMyMainLanguage} = manageLocal(locales, locale)
 
   return {
     props: {
       menu,
       doc,
+      lang:{
+        currentLang,
+        isMyMainLanguage,
+      }
     },
   };
 }

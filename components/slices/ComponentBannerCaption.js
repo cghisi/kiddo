@@ -14,12 +14,12 @@ export default function ComponentBannerCaption({ slice }) {
           </h1>
           <RichText render={slice.primary.description} />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 text-right">
           <Image
             src={slice.primary.image_banner.url}
             alt={slice.primary.image_banner.alt}
-            width={600}
-            height={600}
+            width={550}
+            height={550}
           />
         </div>
       </div>
