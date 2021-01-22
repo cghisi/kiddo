@@ -24,7 +24,7 @@ module.exports = {
 
   // Additional helper function for Next/Link component
   hrefResolver: function (doc) {
-    console.log(doc);
+    console.log(doc.uid);
     if (doc.type === "page") {
       return `/${doc.lang}/${doc.uid}`;
     }

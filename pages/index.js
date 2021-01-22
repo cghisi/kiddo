@@ -9,7 +9,7 @@ import Slice from "components/slice";
  */
 const Homepage = ({ doc, menu, lang, preview }) => {
   if (doc && doc.data) {
-    console.log(doc);
+    //console.log(doc);
     //useUpdatePreviewRef(preview, doc.id)
     //useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])
 
@@ -48,16 +48,16 @@ export async function getStaticProps({
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
-  const { currentLang, isMyMainLanguage} = manageLocal(locales, locale)
+  const { currentLang, isMyMainLanguage } = manageLocal(locales, locale);
 
   return {
     props: {
       menu,
       doc,
-      lang:{
+      lang: {
         currentLang,
         isMyMainLanguage,
-      }
+      },
     },
   };
 }
