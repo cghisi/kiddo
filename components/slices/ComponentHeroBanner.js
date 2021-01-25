@@ -23,7 +23,7 @@ export default function ComponentHeroBanner({ slice }) {
                 href={item.cta_link}
                 className="hover:bg-blue-500 text-white py-3 px-6 rounded-md"
                 style={{
-                  backgroundColor: item.cta_color
+                  backgroundColor: item.cta_color,
                 }}
               >
                 {item.cta_title}

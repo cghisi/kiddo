@@ -1,22 +1,16 @@
-import React from 'react';
-import Head from 'next/head';
-import { prismicRepoName } from '../utils/prismicHelpers';
+import React from "react";
+import Head from "next/head";
+import { prismicRepoName } from "../utils/prismicHelpers";
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from "./Header";
+import Footer from "./Footer";
 //import ExitPreviewButton from './ExitPreviewButton'
 
-const Layout = ({
-  isPreview,
-  children,
-  altLangs,
-  lang,
-  menu,
-}) => (
+const Layout = ({ isPreview, children, altLangs, lang, menu }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
-      <link rel="icon" href="/favicon.png" type="image/png" />
+      <link rel="icon" href="/favicon_32x32.png" type="image/png" />
       <link
         rel="preload"
         href="/fonts/OpenSans-Regular.woff"
@@ -29,8 +23,13 @@ const Layout = ({
         as="font"
         crossOrigin=""
       />
-      <title>KIDDO - Need some help on your translations, website, content</title>
-      <meta name="description" content="Your consulting team that will help you with your website, translations..." />
+      <title>
+        KIDDO - Need some help on your translations, website, content
+      </title>
+      <meta
+        name="description"
+        content="Your consulting team that will help you with your website, translations..."
+      />
       <script
         async
         defer

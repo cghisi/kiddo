@@ -1,8 +1,8 @@
 import React from "react";
 import NextLink from "next/link";
+import Image from "next/image";
 
 import Navigation from "./navigation";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = ({ menu, altLangs }) => {
   return (
@@ -15,14 +15,14 @@ const Header = ({ menu, altLangs }) => {
         <div className="flex items-center py-6 w-2/5">
           <NextLink href={"/"} passHref>
             <a>
-              <h1 className="text-3xl">KIDDO</h1>
+              <Image src="/KIDDO.png" alt="KIDDO" width={110} height={38} />
             </a>
           </NextLink>
         </div>
         <div className="flex justify-end items-center py-6 w-3/5">
           <ul className="">
             <Navigation menu={menu} />
-            <LanguageSwitcher altLangs={altLangs} />
+            {/* <LanguageSwitcher altLangs={altLangs} /> */}
           </ul>
         </div>
       </div>
