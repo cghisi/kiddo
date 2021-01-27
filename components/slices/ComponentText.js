@@ -9,7 +9,7 @@ export default function ComponentText({ slice }) {
       }}
     >
       <div className="container mx-auto">
-        <div className="text-center w-2/3 mx-auto">
+        <div className="text-center md:w-2/3 md:mx-auto mx-5">
           <h2 className="text-3xl font-medium mb-6">
             {RichText.asText(slice.primary.title)}
           </h2>

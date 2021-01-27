@@ -7,14 +7,14 @@ export default function ComponentBannerCaption({ slice }) {
       className="py-10"
       style={{ backgroundColor: slice.primary.background }}
     >
-      <div className="container mx-auto flex flex-wrap items-center">
-        <div className="w-1/2 py-10 pr-20">
+      <div className="container mx-auto flex flex-wrap md:flex-nowrap items-center">
+        <div className="md:w-1/2 py-10 md:pr-20 mx-5 text-center md:text-left">
           <h1 className="text-3xl font-medium py-5">
             {RichText.asText(slice.primary.title_of_banner)}
           </h1>
           <RichText render={slice.primary.description} />
         </div>
-        <div className="w-1/2 text-right">
+        <div className="md:w-1/2 md:text-right text-center">
           <Image
             src={slice.primary.image_banner.url}
             alt={slice.primary.image_banner.alt}

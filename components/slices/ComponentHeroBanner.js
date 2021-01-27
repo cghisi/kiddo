@@ -11,9 +11,9 @@ export default function ComponentHeroBanner({ slice }) {
             backgroundColor: item.background,
           }}
         >
-          <div className="flex flex-wrap items-center container mx-auto">
-            <div className="w-1/2">
-              <h1 className="text-5xl font-medium py-6 mr-5">
+          <div className="flex flex-wrap md:flex-nowrap items-center container mx-auto">
+            <div className="md:w-1/2 mx-5">
+              <h1 className="text-5xl font-medium py-6 md:mr-5">
                 {RichText.asText(item.title)}
               </h1>
               <p className="my-8 font-normal">
@@ -29,7 +29,7 @@ export default function ComponentHeroBanner({ slice }) {
                 {item.cta_title}
               </a>
             </div>
-            <div className="w-1/2 text-right">
+            <div className="md:w-1/2 md:text-right mx-5">
               <Image
                 src={item.image.url}
                 alt={item.image.alt}

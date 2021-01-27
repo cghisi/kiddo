@@ -3,6 +3,8 @@ import NextLink from "next/link";
 import Image from "next/image";
 
 import Navigation from "./navigation";
+import LanguageSwitcher from './LanguageSwitcher';
+import MobileNavigation from "./MobileNavigation";
 
 const Header = ({ menu, altLangs }) => {
   return (
@@ -12,17 +14,20 @@ const Header = ({ menu, altLangs }) => {
       }}
     >
       <div className="flex container mx-auto">
-        <div className="flex items-center py-6 w-2/5">
+        <div className="md:hidden justify-end items-center py-6 w-1/3">
+          <MobileNavigation altLangs={altLangs} menu={menu} />
+        </div>
+        <div className="flex items-center py-6 sm:w-1/3 md:w-2/5">
           <NextLink href={"/"} passHref>
             <a>
               <Image src="/KIDDO.png" alt="KIDDO" width={110} height={38} />
             </a>
           </NextLink>
         </div>
-        <div className="flex justify-end items-center py-6 w-3/5">
-          <ul className="">
+        <div className="hidden md:flex justify-end items-center py-6 md:w-3/5 sm:w-1/3">
+          <ul>
             <Navigation menu={menu} />
-            {/* <LanguageSwitcher altLangs={altLangs} /> */}
+            <LanguageSwitcher altLangs={altLangs} />
           </ul>
         </div>
       </div>
