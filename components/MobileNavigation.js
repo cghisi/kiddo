@@ -8,7 +8,7 @@ class MobileNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false
+      isExpanded: false,
     };
   }
   handleToggle(e) {
@@ -25,7 +25,7 @@ class MobileNavigation extends Component {
       <div>
         <button
           id="nav-toggle"
-          className="flex items-center px-3 py-2 hover:text-white"
+          className="flex items-center px-5 py-2 hover:text-white"
           onClick={(e) => this.handleToggle(e)}
         >
           <svg
@@ -39,12 +39,23 @@ class MobileNavigation extends Component {
         </button>
         <nav className={`${isExpanded ? "flex" : "hidden"}`}>
           <aside className="transform top-0 left-0 w-3/4 bg-white fixed h-full overflow-auto ease-in-out z-30">
-            <span
+            <div
               className="flex w-full items-center p-4 border-b"
               onClick={(e) => this.handleToggle(e)}
             >
-              <Image src="/KIDDO.png" alt="KIDDO" width={80} height={28} />
-            </span>
+              <span className="w-1/2">
+                <Image src="/KIDDO.png" alt="KIDDO" width={80} height={28} />
+              </span>
+              <span className="w-1/2 text-right">
+                <Image
+                  src="/close.svg"
+                  alt="Close Menu"
+                  width={20}
+                  height={20}
+                />
+              </span>
+            </div>
+
             {menu.map((menuLink, index) => (
               <span
                 className="flex items-center p-4 hover:bg-indigo-500 border-gray-300 border-b"

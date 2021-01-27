@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import Image from "next/image";
 
 import Navigation from "./navigation";
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from "./LanguageSwitcher";
 import MobileNavigation from "./MobileNavigation";
 
 const Header = ({ menu, altLangs }) => {
