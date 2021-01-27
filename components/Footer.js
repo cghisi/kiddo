@@ -9,7 +9,7 @@ const Footer = () => (
         <div class="flex-1 text-center">test</div>
         <div class="flex-1">test</div>
         <div class="flex-1 py-7">
-          <Image src="/KIDDO.png" alt="KIDDO" width={110} height={38} />
+          <Image src="/KIDDO.png" alt="KIDDO" width={110} height={36} />
         </div>
       </div>
     </div>
