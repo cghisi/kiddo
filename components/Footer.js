@@ -11,9 +11,11 @@ const Footer = () => (
   <footer className="footer bg-gray-700 relative pt-1 border-b-2 border-gray-500">
     <div className="container mx-auto">
       <div className="flex">
-        <div className="flex-1 text-center">test</div>
-        <div className="flex-1">test</div>
-        <div className="flex-1">test</div>
+        <div class="flex-1 text-center">test</div>
+        <div class="flex-1">test</div>
+        <div class="flex-1 py-7">
+          <Image src="/KIDDO.png" alt="KIDDO" width={110} height={38} />
+        </div>
       </div>
     </div>
     <div className="container mx-auto px-6">
