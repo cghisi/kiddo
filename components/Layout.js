@@ -6,7 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 //import ExitPreviewButton from './ExitPreviewButton'
 
-const Layout = ({ isPreview, children, altLangs, lang, menu }) => (
+const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
@@ -43,7 +43,7 @@ const Layout = ({ isPreview, children, altLangs, lang, menu }) => (
     />
     <main>{children}</main>
     {/* {isPreview ? <ExitPreviewButton /> : null} */}
-    <Footer />
+    <Footer footer={footer} />
   </>
 );
 

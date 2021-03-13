@@ -7,7 +7,7 @@ import Slice from "components/slice";
 /**
  * Homepage component
  */
-const Homepage = ({ doc, menu, lang, preview }) => {
+const Homepage = ({ doc, menu, lang, footer, preview }) => {
   if (doc && doc.data) {
     //console.log(doc);
     //useUpdatePreviewRef(preview, doc.id)
@@ -18,6 +18,7 @@ const Homepage = ({ doc, menu, lang, preview }) => {
         altLangs={doc.alternate_languages}
         lang={lang}
         menu={menu}
+        footer={footer}
         //isPreview={preview.isActive}
       >
         <Slice sliceZone={doc.data.body} />
@@ -48,12 +49,21 @@ export async function getStaticProps({
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
+  const footer =
+    (await client.getSingle(
+      "footer",
+      ref ? { ref, lang: locale } : { lang: locale }
+    )) || {};
+
   const { currentLang, isMyMainLanguage } = manageLocal(locales, locale);
+
+  console.log(footer);
 
   return {
     props: {
       menu,
       doc,
+      footer,
       lang: {
         currentLang,
         isMyMainLanguage,
