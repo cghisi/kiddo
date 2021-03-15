@@ -11,18 +11,6 @@ const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
     <Head>
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon_32x32.png" type="image/png" />
-      <link
-        rel="preload"
-        href="/fonts/OpenSans-Regular.woff"
-        as="font"
-        crossOrigin=""
-      />
-      <link
-        rel="preload"
-        href="/fonts/Raleway-Medium.woff"
-        as="font"
-        crossOrigin=""
-      />
       <title>
         KIDDO - Need some help on your translations, website, content
       </title>

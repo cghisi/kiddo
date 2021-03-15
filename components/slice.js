@@ -4,8 +4,6 @@ import Text from "./slices/ComponentText";
 import IconInlineList from "./slices/ComponentInlineIcon";
 
 export default function Slice({ sliceZone }) {
-  //console.log(sliceZone);
-
   return (
     <div>
       {sliceZone.map((slice, index) => {

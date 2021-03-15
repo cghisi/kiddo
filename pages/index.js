@@ -9,17 +9,13 @@ import Slice from "components/slice";
  */
 const Homepage = ({ doc, menu, lang, footer, preview }) => {
   if (doc && doc.data) {
-    //console.log(doc);
-    //useUpdatePreviewRef(preview, doc.id)
-    //useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])
-
     return (
       <Layout
         altLangs={doc.alternate_languages}
         lang={lang}
         menu={menu}
         footer={footer}
-        //isPreview={preview.isActive}
+      //isPreview={preview.isActive}
       >
         <Slice sliceZone={doc.data.body} />
       </Layout>
@@ -38,31 +34,32 @@ export async function getStaticProps({
   const client = Client();
 
   const doc =
-    (await client.getSingle(
-      "landing_page",
+    (await client.getByUID(
+      "page",
+      "homepage",
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
   const menu =
-    (await client.getSingle(
-      "navigation",
+    (await client.getByUID(
+      "menu",
+      "top_navigation",
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
   const footer =
-    (await client.getSingle(
+    (await client.getByUID(
+      "menu",
       "footer",
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
   const { currentLang, isMyMainLanguage } = manageLocal(locales, locale);
 
-  console.log(footer);
-
   return {
     props: {
-      menu,
       doc,
+      menu,
       footer,
       lang: {
         currentLang,

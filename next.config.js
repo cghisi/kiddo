@@ -5,7 +5,7 @@ module.exports = {
     domains: [
       "images.prismic.io",
       "prismic-io.s3.amazonaws.com",
-      "saharandchristophe.cdn.prismic.io",
+      "kiddo.cdn.prismic.io",
     ],
   },
   i18n: {

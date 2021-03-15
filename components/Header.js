@@ -20,7 +20,7 @@ const Header = ({ menu, altLangs }) => {
         <div className="flex items-center py-6 sm:w-1/3 md:w-2/5">
           <NextLink href={"/"} passHref>
             <a>
-              <Image src="/KIDDO.png" alt="KIDDO" width={110} height={38} />
+              <Image src="/KIDDO.png" alt="KIDDO" width={110} height={42} />
             </a>
           </NextLink>
         </div>

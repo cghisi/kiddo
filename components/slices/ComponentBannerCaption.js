@@ -1,26 +1,41 @@
 import { RichText } from "prismic-reactjs";
 import Image from "next/image";
 
+import { Button } from "../Button";
+
 export default function ComponentBannerCaption({ slice }) {
+
+  let divPosition = "flex-col md:flex-row";
+  let imgPosition = "text-center";
+  if (slice.primary.image_position == "left") {
+    divPosition = "flex-col-reverse md:flex-row-reverse text-left";
+    imgPosition = "text-left"
+  }
+
   return (
     <section
       className="py-10"
       style={{ backgroundColor: slice.primary.background }}
     >
-      <div className="container mx-auto flex flex-wrap md:flex-nowrap items-center">
-        <div className="md:w-1/2 py-10 md:pr-20 mx-5 text-center md:text-left">
-          <h1 className="text-3xl font-medium py-5">
-            {RichText.asText(slice.primary.title_of_banner)}
-          </h1>
-          <RichText render={slice.primary.description} />
-        </div>
-        <div className="md:w-1/2 md:text-right text-center">
-          <Image
-            src={slice.primary.image_banner.url}
-            alt={slice.primary.image_banner.alt}
-            width={550}
-            height={550}
-          />
+      <div className="container mx-auto text-center my-20 md:my-28">
+        <div className={["flex flex-col md:flex-row", divPosition].join(" ")}>
+          <div className="md:w-1/2 m-auto text-center md:text-left">
+            <h1 className="text-3xl font-medium">
+              {RichText.asText(slice.primary.title_of_banner)}
+            </h1>
+            <div className="py-10">
+              <RichText render={slice.primary.description} />
+            </div>
+            <Button primary label={slice.primary.cta_title} />
+          </div>
+          <div className={["md:w-1/2", imgPosition].join(" ")}>
+            <Image
+              src={slice.primary.image_banner.url}
+              alt={slice.primary.image_banner.alt}
+              width={550}
+              height={550}
+            />
+          </div>
         </div>
       </div>
     </section>
