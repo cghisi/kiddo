@@ -14,8 +14,8 @@ export default function ComponentHeroBanner({ slice }) {
           }}
         >
           <div className="flex flex-wrap md:flex-nowrap items-center container mx-auto">
-            <div className="md:w-1/2">
-              <h1 className="text-5xl font-medium md:mr-5">
+            <div className="md:w-1/2 px-5 text-center md:text-left">
+              <h1 className="md:text-5xl text-4xl font-bold md:mr-5">
                 {RichText.asText(item.title)}
               </h1>
               <p className="my-8 font-normal">

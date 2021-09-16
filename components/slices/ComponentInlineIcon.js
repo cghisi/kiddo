@@ -13,10 +13,10 @@ export default function ComponentInlineIcon({ slice }) {
             <Image
               src={item.icon_image.url}
               alt={item.icon_image.alt}
-              width={70}
-              height={90}
+              width={50}
+              height={50}
             />
-            <div>
+            <div className="mt-5">
               <h3 className="font-normal">
                 {RichText.asText(item.icon_title)}
               </h3>

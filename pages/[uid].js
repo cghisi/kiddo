@@ -8,7 +8,7 @@ import Slice from "components/slice";
 /**
  * posts component
  */
-const Page = ({ doc, menu, lang, preview }) => {
+const Page = ({ doc, menu, lang, footer, preview  }) => {
   if (doc && doc.data) {
     // useUpdatePreviewRef(preview, doc.id);
     // useUpdateToolbarDocs(
@@ -21,7 +21,8 @@ const Page = ({ doc, menu, lang, preview }) => {
         altLangs={doc.alternate_languages}
         lang={lang}
         menu={menu}
-        //isPreview={preview.isActive}
+        footer={footer}
+      //isPreview={preview.isActive}
       >
         <Slice sliceZone={doc.data.body} />
       </Layout>
@@ -45,18 +46,28 @@ export async function getStaticProps({
       params.uid,
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
+
   const menu =
-    (await client.getSingle(
-      "navigation",
+    (await client.getByUID(
+      "menu",
+      "top_navigation",
       ref ? { ref, lang: locale } : { lang: locale }
     )) || {};
 
+  const footer =
+    (await client.getByUID(
+      "menu",
+      "footer",
+      ref ? { ref, lang: locale } : { lang: locale }
+    )) || {};
+    
   const { currentLang, isMyMainLanguage } = manageLocal(locales, locale);
 
   return {
     props: {
-      menu,
       doc,
+      menu,
+      footer,
       //   preview: {
       //     isActive: isPreview,
       //     activeRef: ref,
