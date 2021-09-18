@@ -8,11 +8,11 @@ export default function ComponentGrid({ slice }) {
     return (
         <section className="container mx-auto">
             <h2 className="text-3xl text-center font-bold my-5">{RichText.asText(slice.primary.heading)}</h2>
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
                 {slice.items.map((item, index) => (
                     <div
                         key={index}
-                        className="flex-1 text-center m-5"
+                        className="md:w-1/2 text-center m-5"
                     >
                         <Image
                             src={item.image.url}
