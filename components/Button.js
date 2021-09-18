@@ -11,7 +11,7 @@ export const Button = ({ primary, backgroundColor, size, label, url, ...props })
     <Link
       {...props}
       href={hrefResolver(url)} passHref>
-      <a type="button" className={[`btn--${size}`, mode].join(" ")}>{label}</a>
+      <a className={[`btn--${size}`, mode].join(" ")}>{label}</a>
     </Link>
   );
 };
