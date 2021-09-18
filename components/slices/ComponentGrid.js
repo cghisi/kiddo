@@ -20,7 +20,7 @@ export default function ComponentGrid({ slice }) {
                             width={650}
                             height={750}
                         />
-                        <div className="text-left m-10">
+                        <div className="md:text-left md:mx-10 my-10 text-center">
                             <b>{RichText.asText(item.title)}</b> - {RichText.asText(item.description)}
                         </div>
                         <div className="text-center">
