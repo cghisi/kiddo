@@ -25,7 +25,7 @@ const Footer = ({ footer }) => {
   return (
     <footer className="footer bg-gray-600 relative pt-1 border-b-2 border-gray-500 text-white">
       <div className="container mx-auto">
-        <div className="flex my-5">
+        <div className="flex flex-col md:flex-row my-10 mx-5">
           <div className="flex-1">
             <h3>{RichText.asText(footer.data.title)}</h3>
             <ul className="text-white my-5">
