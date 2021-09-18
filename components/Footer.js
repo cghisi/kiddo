@@ -23,18 +23,21 @@ const MenuLinks = ({ links = [] }) => {
 
 const Footer = ({ footer }) => {
   return (
-    <footer className="footer bg-black relative pt-1 border-b-2 border-gray-500 text-white">
+    <footer className="footer bg-gray-600 relative pt-1 border-b-2 border-gray-500 text-white">
       <div className="container mx-auto">
         <div className="flex my-5">
           <div className="flex-1">
             <h3>{RichText.asText(footer.data.title)}</h3>
-            <ul className="text-white">
+            <ul className="text-white my-5">
               <Navigation menu={footer} />
             </ul>
           </div>
-          <div className="flex-1">test</div>
-          <div className="flex-1 py-7">
-            <Image src="/KIDDO.png" alt="KIDDO" width={110} height={36} />
+          <div className="flex-1">
+            <h3>KIDDO</h3>
+            <div className="text-white my-5">
+              We can help your website. Translating, Coding to help you create a beautiful experience on your website.
+              Our mission is to provide a great experience for your users.
+            </div>
           </div>
         </div>
       </div>

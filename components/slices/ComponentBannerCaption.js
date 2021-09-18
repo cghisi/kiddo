@@ -26,9 +26,11 @@ export default function ComponentBannerCaption({ slice }) {
             <div className="py-10">
               <RichText render={slice.primary.description} />
             </div>
-            <Button primary label={slice.primary.cta_title} />
+            {slice.primary.cta_title ?
+              <Button primary label={slice.primary.cta_title} url={slice.primary.button_link}/> : null
+            }
           </div>
-          <div className={["md:w-1/2 px-5", imgPosition].join(" ")}>
+          <div className={["md:w-1/2 px-5 text-center", imgPosition].join(" ")}>
             <Image
               src={slice.primary.image_banner.url}
               alt={slice.primary.image_banner.alt}

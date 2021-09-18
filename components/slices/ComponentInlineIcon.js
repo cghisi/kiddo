@@ -7,14 +7,15 @@ export default function ComponentInlineIcon({ slice }) {
       className="py-10"
       style={{ backgroundColor: slice.primary.background }}
     >
+      <h2 className="text-3xl text-center font-bold my-5">{RichText.asText(slice.primary.title)}</h2>
       <div className="text-center">
         {slice.items.map((item, index) => (
-          <div key={index} className="inline-block mx-10">
+          <div key={index} className="inline-block m-20">
             <Image
               src={item.icon_image.url}
               alt={item.icon_image.alt}
-              width={50}
-              height={50}
+              width={150}
+              height={40}
             />
             <div className="mt-5">
               <h3 className="font-normal">

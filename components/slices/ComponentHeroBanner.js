@@ -21,7 +21,7 @@ export default function ComponentHeroBanner({ slice }) {
               <p className="my-8 font-normal">
                 {RichText.asText(item.subtitle)}
               </p>
-              <Button primary label={item.cta_title} />
+              <Button primary label={item.cta_title} url={item.cta_link}/>
             </div>
             <div className="md:w-1/2 md:text-right mx-5">
               <Image

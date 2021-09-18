@@ -1,5 +1,6 @@
 import HeroBanner from "./slices/ComponentHeroBanner";
 import BannerCaption from "./slices/ComponentBannerCaption";
+import Grid from "./slices/ComponentGrid";
 import Text from "./slices/ComponentText";
 import IconInlineList from "./slices/ComponentInlineIcon";
 
@@ -12,6 +13,8 @@ export default function Slice({ sliceZone }) {
             return <HeroBanner slice={slice} key={`slice-${index}`} />;
           case "banner_with_caption":
             return <BannerCaption slice={slice} key={`slice-${index}`} />;
+          case "grid":
+            return <Grid slice={slice} key={`slice-${index}`} />;
           case "text":
             return <Text slice={slice} key={`slice-${index}`} />;
           case "rich_text":
