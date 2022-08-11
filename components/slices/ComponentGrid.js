@@ -18,7 +18,7 @@ export default function ComponentGrid({ slice }) {
                             src={item.image.url}
                             alt={item.image.alt}
                             width={650}
-                            height={750}
+                            height={650}
                         />
                         <div className="md:text-left md:mx-10 my-10 text-center">
                             <b>{RichText.asText(item.title)}</b> - {RichText.asText(item.description)}
