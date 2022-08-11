@@ -1,6 +1,10 @@
-import Prismic from '@prismicio/client'
+import * as prismic from '@prismicio/client'
 import Link from "next/link";
-import { apiEndpoint, accessToken, hrefResolver } from "../prismic-configuration";
+import {
+  apiEndpoint,
+  accessToken,
+  hrefResolver,
+} from "../prismic-configuration";
 
 // Helper function to get the Prismic repository name from the URL
 export const [, prismicRepoName] = apiEndpoint.match(
@@ -15,9 +19,8 @@ export const customLink = (type, element, content) => (
 );
 
 // Client method to query documents from the Prismic repo
-
 export const Client = (req = null) =>
-  Prismic.client(apiEndpoint, createClientOptions(req, accessToken));
+  prismic.createClient(apiEndpoint, createClientOptions(req, accessToken));
 
 const createClientOptions = (req = null, prismicAccessToken = null) => {
   const reqOption = req ? { req } : {};
