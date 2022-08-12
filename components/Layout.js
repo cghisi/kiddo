@@ -4,6 +4,7 @@ import { prismicRepoName } from "../utils/prismicHelpers";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import Script from 'next/script'
 //import ExitPreviewButton from './ExitPreviewButton'
 
 const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
@@ -11,6 +12,7 @@ const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
     <Head>
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon_32x32.png" type="image/png" />
+      <link rel='manifest' href='/manifest.json' />
       <title>
         KIDDO - Need some help on your translations, website, content
       </title>
@@ -18,11 +20,12 @@ const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
         name="description"
         content="Your consulting team that will help you with your website, translations..."
       />
-      <script
+      <Script src={`https://static.cdn.prismic.io/prismic.js?new=true&repo=${prismicRepoName}`} strategy="lazyOnload"></Script>
+      {/* <script
         async
         defer
         src={`https://static.cdn.prismic.io/prismic.js?new=true&repo=${prismicRepoName}`}
-      />
+      /> */}
     </Head>
     <Header
       altLangs={altLangs}
