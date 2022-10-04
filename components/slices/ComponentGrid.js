@@ -1,7 +1,6 @@
 import { RichText } from "prismic-reactjs";
 import Image from "next/image";
-
-import { Button } from "../Button";
+import Link from "next/link";
 
 export default function ComponentGrid({ slice }) {
   return (
@@ -15,16 +14,24 @@ export default function ComponentGrid({ slice }) {
             <Image
               src={item.image.url}
               alt={item.image.alt}
-              width={650}
-              height={650}
+              width={800}
+              height={400}
             />
-            <div className="lg:text-left my-10 text-center">
-              <b>{RichText.asText(item.title)}</b> -{" "}
-              {RichText.asText(item.description)}
-            </div>
-            <div className="text-center">
-              <Button primary label={item.cta_title} url={item.url} />
-            </div>
+            <section className="flex">
+              <div className="text-left w-2/3">
+                <b>{RichText.asText(item.title)}</b> -{" "}
+                {RichText.asText(item.description)}
+              </div>
+              <div className="text-right w-1/3">
+                <a
+                  className="underline"
+                  href={item.cta_url.url}
+                  target={item.cta_external == true && "_blank"}
+                >
+                  {item.cta_title}
+                </a>
+              </div>
+            </section>
           </div>
         ))}
       </div>
