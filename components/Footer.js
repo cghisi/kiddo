@@ -12,8 +12,8 @@ const MenuLinks = ({ links = [] }) => {
     return links.map((menuLink, index) => {
       return (
         <li className="my-2" key={index}>
-          <Link href={hrefResolver(menuLink.link)} passHref>
-            <a className="text-white">{menuLink.label}</a>
+          <Link href={hrefResolver(menuLink.link)} passHref legacyBehavior className="text-white">
+           {menuLink.label}
           </Link>
         </li>
       );

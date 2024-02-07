@@ -4,10 +4,22 @@ module.exports = async (phase, { defaultConfig }) => {
    */
   const nextConfig = {
     images: {
-      domains: [
-        "images.prismic.io",
-        "prismic-io.s3.amazonaws.com",
-        "kiddo.cdn.prismic.io",
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.prismic.io',
+          pathname: '**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'prismic-io.s3.amazonaws.com',
+          pathname: '**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'kiddo.cdn.prismic.io',
+          pathname: '**',
+        },
       ],
     },
     i18n: {

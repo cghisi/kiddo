@@ -18,10 +18,10 @@ const Header = ({ menu, altLangs }) => {
           <MobileNavigation altLangs={altLangs} menu={menu} />
         </div>
         <div className="flex items-center py-6 sm:w-1/3 md:w-2/5">
-          <NextLink href={"/"} passHref>
-            <a>
-              <Image src="/KIDDO.png" alt="KIDDO" width={110} height={42} />
-            </a>
+          <NextLink href={"/"} passHref >
+
+            <Image src="/KIDDO.png" alt="KIDDO" width={110} height={42} />
+
           </NextLink>
         </div>
         <div className="hidden md:flex justify-end items-center py-6 md:w-3/5 sm:w-1/3">

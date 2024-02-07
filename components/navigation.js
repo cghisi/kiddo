@@ -6,8 +6,8 @@ const MenuLinks = ({ links = [] }) => {
     return links.map((menuLink, index) => {
       return (
         <li className="mr-6 inline-block" key={index}>
-          <Link href={hrefResolver(menuLink.link)} passHref>
-            <a className="text-black link-navigation">{menuLink.label}</a>
+          <Link href={hrefResolver(menuLink.link)} passHref className="text-black link-navigation">
+            {menuLink.label}
           </Link>
         </li>
       );

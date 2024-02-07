@@ -13,8 +13,8 @@ export const [, prismicRepoName] = apiEndpoint.match(
 
 // Helper function to convert Prismic Rich Text links to Next/Link components
 export const customLink = (type, element, content) => (
-  <Link key={element.data.id} href={hrefResolver(element.data)}>
-    <a>{content}</a>
+  <Link key={element.data.id} href={hrefResolver(element.data)} legacyBehavior>
+    {content}
   </Link>
 );
 

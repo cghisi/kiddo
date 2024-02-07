@@ -62,8 +62,8 @@ class MobileNavigation extends Component {
                 className="flex items-center p-4 hover:bg-indigo-500 border-gray-300 border-b"
                 key={index}
               >
-                <Link href={hrefResolver(menuLink.link)} passHref>
-                  <a className="text-black link-navigation">{menuLink.label}</a>
+                <Link href={hrefResolver(menuLink.link)} passHref legacyBehavior className="text-black link-navigation">
+                  {menuLink.label}
                 </Link>
               </span>
             ))}

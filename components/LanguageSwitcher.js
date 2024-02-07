@@ -10,8 +10,9 @@ const AltLangs = ({ altLangs = [] }) =>
           as={linkResolver(altLang)}
           href={hrefResolver(altLang)}
           passHref
-        >
-          <a className={`flag-${altLang.lang}`}>{altLang.lang.slice(-2)}</a>
+          legacyBehavior
+          className={`flag-${altLang.lang}`}>
+          {altLang.lang.slice(-2)}
         </Link>
       </li>
     );

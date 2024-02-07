@@ -20,10 +20,10 @@ export default function ComponentBannerCaption({ slice }) {
       <div className="container mx-auto text-center my-10 md:my-20">
         <div className={["flex flex-col md:flex-row", divPosition].join(" ")}>
           <div className="md:w-1/2 m-auto text-center md:text-left px-5">
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl font-bold pt-5 ">
               {RichText.asText(slice.primary.title_of_banner)}
             </h1>
-            <div className="py-10">
+            <div className="py-5">
               <RichText render={slice.primary.description} />
             </div>
             {slice.primary.cta_title ?

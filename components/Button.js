@@ -9,10 +9,8 @@ export const Button = ({ primary, backgroundColor, size, label, url, ...props })
 
   if (url.url){
     return (
-      <Link
-        {...props}
-        href={hrefResolver(url)} passHref>
-        <a className={[`btn--${size}`, mode].join(" ")}>{label}</a>
+      <Link {...props} href={hrefResolver(url)} passHref legacyBehavior className={[`btn--${size}`, mode].join(" ")}>
+        {label}
       </Link>
     );
   }
