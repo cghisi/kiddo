@@ -47,7 +47,7 @@ class MobileNavigation extends Component {
               <span className="w-1/2">
                 <Image src="/KIDDO.png" alt="KIDDO" width={80} height={28} />
               </span>
-              <span className="w-1/2 text-right">
+              <span className="w-1/2 text-right flex justify-end">
                 <Image
                   src="/close.svg"
                   alt="Close Menu"
