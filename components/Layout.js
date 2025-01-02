@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { prismicRepoName } from "../utils/prismicHelpers";
+import { Analytics } from "@vercel/analytics/react"
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -32,7 +33,9 @@ const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
       //currentLang={lang.currentLang}
       menu={menu}
     />
-    <main>{children}</main>
+    <main>{children}
+    <Analytics/>
+    </main>
     {/* {isPreview ? <ExitPreviewButton /> : null} */}
     <Footer footer={footer} />
   </>
