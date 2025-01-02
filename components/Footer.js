@@ -23,7 +23,7 @@ const MenuLinks = ({ links = [] }) => {
 
 const Footer = ({ footer }) => {
   return (
-    <footer className="footer bg-gray-200 relative pt-1 border-b-2 border-gray-500 text-gray-500">
+    <footer className="footer bg-gray-200 pt-1 border-b-2 border-gray-500 text-gray-500">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row my-10 mx-5">
           <div className="flex-1">

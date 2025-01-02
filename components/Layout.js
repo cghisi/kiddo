@@ -11,6 +11,7 @@ import Script from 'next/script'
 
 const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
   <>
+  <div className="flex flex-col min-h-screen">
     <Head>
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon_32x32.png" type="image/png" />
@@ -34,13 +35,14 @@ const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
       //currentLang={lang.currentLang}
       menu={menu}
     />
-    <main>
+    <main className='flex-1'>
       {children}
       <Analytics />
       <SpeedInsights />
     </main>
     {/* {isPreview ? <ExitPreviewButton /> : null} */}
     <Footer footer={footer} />
+    </div>
   </>
 );
 
