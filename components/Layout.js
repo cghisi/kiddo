@@ -34,9 +34,10 @@ const Layout = ({ isPreview, children, altLangs, lang, menu, footer }) => (
       //currentLang={lang.currentLang}
       menu={menu}
     />
-    <main>{children}
-    <Analytics/>
-    <SpeedInsights />
+    <main>
+      {children}
+      <Analytics />
+      <SpeedInsights />
     </main>
     {/* {isPreview ? <ExitPreviewButton /> : null} */}
     <Footer footer={footer} />
