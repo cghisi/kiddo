@@ -3,6 +3,7 @@ import BannerCaption from "./slices/ComponentBannerCaption";
 import Grid from "./slices/ComponentGrid";
 import Text from "./slices/ComponentText";
 import IconInlineList from "./slices/ComponentInlineIcon";
+import Features from "slices/Features";
 
 export default function Slice({ sliceZone }) {
   return (
@@ -21,6 +22,8 @@ export default function Slice({ sliceZone }) {
             return <Text slice={slice} key={`slice-${index}`} />;
           case "icon_inline_list":
             return <IconInlineList slice={slice} key={`slice-${index}`} />;
+          case "features":
+            return <Features slice={slice} key={`slice-${index}`} />;
           default:
             return null;
         }
