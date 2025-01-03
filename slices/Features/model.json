@@ -25,6 +25,17 @@
             "label": "Feature Grid",
             "repeat": true,
             "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon",
+                  "constraint": {
+                    "width": 48,
+                    "height": 48
+                  },
+                  "thumbnails": []
+                }
+              },
               "title": {
                 "type": "Text",
                 "config": {

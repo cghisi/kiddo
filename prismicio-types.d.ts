@@ -539,6 +539,16 @@ export type AllDocumentTypes = MenuDocument | PageDocument;
  */
 export interface FeaturesSliceDefaultPrimaryFeatureGridItem {
   /**
+   * Icon field in *Features → Default → Primary → Feature Grid*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.feature_grid[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
    * Title field in *Features → Default → Primary → Feature Grid*
    *
    * - **Field Type**: Text

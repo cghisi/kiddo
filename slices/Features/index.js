@@ -5,6 +5,7 @@
  */
 
 import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 
 const Features = ({ slice }) => {
   return (
@@ -18,7 +19,8 @@ const Features = ({ slice }) => {
         <div className="grid grid-cols-3 gap-4 my-6">
           {slice.primary.feature_grid.map((item) => (
             <div className="bg-slate-50 px-10 py-5">
-              <p className="font-bold">{item.title}</p>
+              <PrismicNextImage field={item.icon} />
+              <p className="font-bold mt-5">{item.title}</p>
               <div className="mt-5"><PrismicRichText field={item.description}/></div>
             </div>
           ))}
